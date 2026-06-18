@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开云体育 | 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            background-color: #f5f7fa;
+            color: #1e2a3a;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0b1a2e 0%, #1a2f44 100%);
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            color: #e6edf5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h1 span {
+            color: #f0b27a;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 640px;
+            margin: 0 auto 1.8rem;
+            color: #b0c7db;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            padding: 0.4rem 1.4rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            color: #d4e1ed;
+            border: 1px solid rgba(255,255,255,0.12);
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro {
+            background: #ffffff;
+            padding: 3.5rem 0 2rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+        }
+
+        .intro .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .intro .text-block h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            color: #0b1a2e;
+        }
+
+        .intro .text-block p {
+            margin-bottom: 1.2rem;
+            color: #3d4b5c;
+            font-size: 1.05rem;
+        }
+
+        .intro .text-block a {
+            color: #c9782b;
+            text-decoration: none;
+            border-bottom: 1px dashed #c9782b;
+            transition: border 0.2s, color 0.2s;
+        }
+
+        .intro .text-block a:hover {
+            color: #a35f1d;
+            border-bottom-style: solid;
+        }
+
+        .intro .card-highlight {
+            background: #f0f4f9;
+            border-radius: 20px;
+            padding: 2rem 2rem 1.8rem;
+            border-left: 5px solid #c9782b;
+        }
+
+        .intro .card-highlight ul {
+            list-style: none;
+        }
+
+        .intro .card-highlight li {
+            margin-bottom: 1.2rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1rem;
+            color: #2b3b4e;
+        }
+
+        .intro .card-highlight li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #c9782b;
+            font-weight: bold;
+        }
+
+        .features {
+            background: #ffffff;
+            padding: 3rem 0 3.5rem;
+        }
+
+        .features h3 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 2.5rem;
+            color: #0b1a2e;
+        }
+
+        .features .flex-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .features .card {
+            background: #f9fbfd;
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            flex: 1 1 260px;
+            max-width: 320px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #e8edf2;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .features .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .features .card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+
+        .features .card h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #0b1a2e;
+        }
+
+        .features .card p {
+            color: #4a5a6e;
+            font-size: 0.95rem;
+        }
+
+        .usage-scenario {
+            background: #f0f4f9;
+            padding: 3rem 0 3.5rem;
+        }
+
+        .usage-scenario h3 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            color: #0b1a2e;
+        }
+
+        .usage-scenario .scenario-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .usage-scenario .scenario-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.8rem 1.5rem;
+            border: 1px solid #e2e9f0;
+        }
+
+        .usage-scenario .scenario-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #c9782b;
+            font-weight: 500;
+        }
+
+        .usage-scenario .scenario-item p {
+            color: #3d4b5c;
+            font-size: 0.95rem;
+        }
+
+        .faq-note {
+            background: #ffffff;
+            padding: 2.5rem 0 3rem;
+        }
+
+        .faq-note .faq-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f7faff;
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            border: 1px solid #dee7f0;
+        }
+
+        .faq-note h3 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: #0b1a2e;
+            text-align: center;
+        }
+
+        .faq-note details {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #dce4ed;
+            padding-bottom: 0.8rem;
+        }
+
+        .faq-note summary {
+            font-weight: 500;
+            color: #1e2a3a;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .faq-note summary::-webkit-details-marker {
+            color: #c9782b;
+        }
+
+        .faq-note details p {
+            color: #4a5a6e;
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            padding-left: 0.8rem;
+        }
+
+        .footer {
+            background: #0b1a2e;
+            color: #9aafc4;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #c9782b;
+            text-decoration: none;
+            border-bottom: 1px dotted #c9782b;
+        }
+
+        .footer a:hover {
+            color: #e2a35e;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .intro .grid {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+
+            .usage-scenario .scenario-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features .flex-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features .card {
+                max-width: 100%;
+            }
+
+            .faq-note .faq-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1><span>开云</span>体育</h1>
+            <p>一个聚焦运动内容与赛事资讯的平台，帮助用户快速了解体育动态、赛事信息与相关服务。</p>
+            <div class="tagline">产品说明 · 亮点 · 使用建议</div>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="container">
+            <div class="grid">
+                <div class="text-block">
+                    <h2>快速认清这个网站</h2>
+                    <p>如果你偶然来到 <a href="https://www.zhengxiang-kaiyun.com.cn">开云体育</a>，首先会注意到它围绕体育内容展开，页面结构清晰，信息分类明确。对于想快速判断网站用途的用户，它的核心是提供体育相关的资讯浏览、赛事信息整合，以及配套的交互功能。</p>
+                    <p>网站整体风格偏向实用与信息展示，没有过多花哨的设计，适合日常查看体育新闻、关注热门赛事动态。无论是偶尔浏览，还是有特定信息需求，都能较快上手。</p>
+                </div>
+                <div class="card-highlight">
+                    <h3 style="font-size:1.2rem; font-weight:500; margin-bottom:1.2rem; color:#0b1a2e;">几个突出特点</h3>
+                    <ul>
+                        <li>内容更新节奏稳定，覆盖主流体育项目与赛事</li>
+                        <li>页面导航清晰，分类入口直观，减少寻找成本</li>
+                        <li>信息呈现以简练为主，不堆砌无关元素</li>
+                        <li>移动端适配良好，碎片时间浏览也方便</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h3>产品亮点</h3>
+            <div class="flex-cards">
+                <div class="card">
+                    <span class="icon">📋</span>
+                    <h4>资讯聚合</h4>
+                    <p>将来自多个渠道的体育新闻按项目归类，方便用户按兴趣筛选，减少信息过载。</p>
+                </div>
+                <div class="card">
+                    <span class="icon">📅</span>
+                    <h4>赛程提醒</h4>
+                    <p>针对重点赛事提供时间表与状态更新，用户可快速了解近期比赛安排与结果。</p>
+                </div>
+                <div class="card">
+                    <span class="icon">🔍</span>
+                    <h4>简洁搜索</h4>
+                    <p>内置搜索功能支持关键词查找，无论是球队、运动员还是赛事，都能直接定位。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="usage-scenario">
+        <div class="container">
+            <h3>使用场景参考</h3>
+            <div class="scenario-grid">
+                <div class="scenario-item">
+                    <h4>日常资讯浏览</h4>
+                    <p>每天花几分钟浏览首页更新，快速掌握当日体育热点，适合没有特定目标的用户。</p>
+                </div>
+                <div class="scenario-item">
+                    <h4>赛前信息收集</h4>
+                    <p>在大型赛事期间，通过网站查阅分组、赛程、历史数据，辅助观赛准备。</p>
+                </div>
+                <div class="scenario-item">
+                    <h4>回顾与对比</h4>
+                    <p>需要查找过往比赛结果或进行球队对比时，站点结构支持按时间或项目回溯。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-note">
+        <div class="container">
+            <div class="faq-box">
+                <h3>常见疑问摘要</h3>
+                <details>
+                    <summary>网站内容主要覆盖哪些体育项目？</summary>
+                    <p>包括足球、篮球、网球、电竞等主流项目，同时也会涉及一些综合性赛事与特色运动，覆盖面较广。</p>
+                </details>
+                <details>
+                    <summary>信息更新频率如何？</summary>
+                    <p>日常新闻保持每日更新，重大赛事期间会增加实时报道与专题页面，信息时效性有基本保障。</p>
+                </details>
+                <details>
+                    <summary>是否需要注册才能浏览？</summary>
+                    <p>大部分内容开放浏览，部分互动功能或个性化设置可能需要简单注册，但浏览资讯本身没有门槛。</p>
+                </details>
+                <details>
+                    <summary>网站是否提供官方APP？</summary>
+                    <p>目前主要通过网页端提供服务，移动端适配良好，可以直接在浏览器中使用，体验稳定。</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p style="margin-bottom:0.5rem;">本页面为产品说明介绍，不构成任何形式的推荐或保证。如需了解完整服务，请直接访问 <a href="https://www.zhengxiang-kaiyun.com.cn">开云体育</a>。</p>
+            <p style="opacity:0.7;">依据实际使用体验整理 · 内容仅供信息参考</p>
+        </div>
+    </footer>
+</body>
+</html>
